@@ -1,118 +1,79 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { View, Text, TouchableOpacity, Image, StyleSheet, TextInput } from 'react-native'
+import React,{useState} from 'react'
+import Header from './Component/Banner/Header'
+import Wraper from './Component/Banner/Wraper'
+import WraperBai2 from './Component/Banner/WraperBai2'
+import WraperBai2_1 from './Component/Banner/WraperBai2_1'
+import TextinPutCustom from './Component/Banner/TextinPutCustom'
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
+  const [hoTen, sethoTen] = useState('')
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+    <View style={{ flex: 1 }}>
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+      {/* <Wraper tilte="Header" backgroundColor="red">
+        <View style={{ flexDirection: 'row', justifyContent: "space-between",margin:10 }}>
+          <TouchableOpacity>
+            <Image style={style.back} source={require('./image/back.png')} />
+          </TouchableOpacity>
+          <Image source={require('./image/profile.png')} />
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+      </Wraper>
+
+
+      <Wraper tilte="Body" backgroundColor="cyan">
+        <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: "center",margin:10 }}>
+          <TouchableOpacity>
+            <Image style={style.back} source={require('./image/back.png')} />
+          </TouchableOpacity>
+        </View>
+      </Wraper>
+      <Wraper tilte="Footer" backgroundColor="pink">
+      <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: "center",margin:10 }}>
+          <TouchableOpacity>
+            <Image style={style.back} source={require('./image/back.png')} />
+          </TouchableOpacity>
+        </View>
+      </Wraper> */}
+
+
+      {/* <WraperBai2
+        title1="Lịch Trình"
+        location="Hồ Tràm, Vũng Tàu"
+        time="9:00 AM - 12:00 AM, 12/12/2024"
+        car="Xe Bus"
+        img='https://i.pinimg.com/564x/32/b0/50/32b050f9f375d158b2e3dd20c9b11553.jpg' />
+
+      <WraperBai2_1
+        title="Khách sạn"
+        nameHoltel="Hồng Quỳnh"
+        timeOpen="9:00 AM - 12:00 AM, 12/12/2024"
+        location="Hồ Tràm, Vũng Tàu"/> */}
+
+
+        <TextinPutCustom
+              onChangeText={sethoTen}
+              placeholder ="Nhập họ tên"
+              placehoherTextColor ="#000"
+        />
+        
+        <TextinPutCustom
+              onChangeText={sethoTen}
+              placeholder ="Nhập họ tên"
+              placehoherTextColor ="#000"
+        />
+
+    </View>
+
+
+  )
 }
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+export default App
 
-export default App;
+const style = StyleSheet.create({
+  back: {
+    width: 20,
+    height: 20
+  }
+})
